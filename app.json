@@ -1,11 +1,12 @@
 {
   "expo": {
-    "name": "RNIntro",
-    "slug": "RNIntro",
+    "name": "React Native Intro",
+    "slug": "React Native Intro",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "description": "my first mobile app",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
