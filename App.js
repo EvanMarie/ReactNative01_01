@@ -5,62 +5,69 @@ import {
   LabelTextStyle,
   MainContainerStyle,
 } from "./styles_divs/styles";
-import { Text, SafeAreaView, View } from "react-native";
+import { Text, SafeAreaView, View, Dimensions } from "react-native";
 import Buttons from "./components/Buttons";
 import Images from "./components/Images";
 import Div from "./styles_divs/Div";
 import ScrollableContainer from "./styles_divs/ScrollableContainer";
+import { useDeviceOrientation } from "@react-native-community/hooks";
+import FlexBox from "./FlexBox";
+import FlexBox02 from "./FlexBox02";
+import FlexBox03 from "./FlexBox03";
 
 // SafeAreaView is iOS only
 
 export default function App() {
+  // capture the dimensions of the screen
+  console.log("Dimensions: ", Dimensions.get("screen"));
+  // capture the orientation of the screen
+  console.log("useDeviceOrientation: ", useDeviceOrientation());
+  const mode = useDeviceOrientation();
+
   return (
-    <>
-      <SafeAreaView style={MainContainerStyle}>
-        <ScrollableContainer>
-          <View style={InnerContainerStyle}>
-            <Text style={HeadingStyle}>Evan's Badassery</Text>
-            <HorizontalRule />
-            <Buttons />
-            <HorizontalRule />
-            <Images />
-            <HorizontalRule />
-            <Text style={LabelTextStyle}>Custom Div Component</Text>
-            <Div backgroundColor="cyan" width={300} height={70}>
-              <Text>
-                This is some text inside my custom div. It is a beautiful div,
-                if I do say so myself.
-              </Text>
-            </Div>
+    <SafeAreaView style={MainContainerStyle}>
+      <ScrollableContainer>
+        <View style={InnerContainerStyle}>
+          <Text style={HeadingStyle}>Evan's Badassery</Text>
+          <HorizontalRule />
+          <Buttons />
+          <HorizontalRule />
+          <Images />
+          <HorizontalRule />
+          <Text style={LabelTextStyle}>Custom View / Div Component</Text>
+          {/* Notice that when using custom style components like this, the width
+            and height can be passed as strings when a percentage as shown below, 
+            or as width={"95%""} height={70}. */}
+          <Div backgroundColor="cyan" width="95%" height={70}>
+            {/* This is how you would pass children to a custom component.
+              In order to styled the text within the component, the style must
+              be passed within the Text tag, not styled in the Div / View. */}
+            <Text style={{ color: "deeppink" }}>
+              This is some text inside my custom div. It is a beautiful div, if
+              I do say so myself.
+            </Text>
+          </Div>
+          <Div
+            backgroundColor="deeppink"
+            width="95%"
+            height={mode === "landscape" ? "100%" : "5%"}
+          >
+            <Text style={{ color: "black" }}>
+              This div changes with orientation changes.
+            </Text>
+          </Div>
+          <HorizontalRule />
+          <View
+            style={{
+              marginBottom: 50,
+            }}
+          >
+            <FlexBox />
+            <FlexBox02 />
+            <FlexBox03 />
           </View>
-        </ScrollableContainer>
-      </SafeAreaView>
-    </>
+        </View>
+      </ScrollableContainer>
+    </SafeAreaView>
   );
 }
-
-/*
-
-STYLES:
-    container: This is a key that represents a style object for a container 
-    view. It's a convention to give this key the name "container" because it 
-    typically refers to the main container element in a React Native component.
-
-    flex: 1: This style property specifies how a flex container should distribute 
-    space among its items. In this case, flex: 1 means that the container should 
-    take up all available vertical and horizontal space.
-
-    backgroundColor: '#fff': This property sets the background color of the 
-    container to white (#fff represents the hexadecimal color code for white). 
-    You can change this value to any valid color value to customize the background 
-    color.
-
-    alignItems: 'center': This property controls the alignment of the container's 
-    children along the horizontal axis. Setting it to 'center' horizontally 
-    centers the children within the container.
-
-    justifyContent: 'center': This property controls the alignment of the 
-    container's children along the vertical axis. Setting it to 'center' 
-    vertically centers the children within the container.
-
-    */

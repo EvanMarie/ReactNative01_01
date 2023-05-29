@@ -3,7 +3,9 @@ import { ScrollView, StyleSheet } from "react-native";
 
 const ScrollableContainer = ({ children }) => {
   return (
-    <ScrollView contentContainerStyle={styles.container}>{children}</ScrollView>
+    <ScrollView contentContainerStyle={styles.container} bounces={false}>
+      {children}
+    </ScrollView>
   );
 };
 

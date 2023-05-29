@@ -23,7 +23,7 @@ const Div = ({ backgroundColor, width, height, children }) => {
     view: {
       borderRadius: 5,
       padding: 10,
-      marginBottom: 10,
+      margin: 10,
       backgroundColor,
       width,
       height,
