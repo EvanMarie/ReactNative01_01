@@ -26,7 +26,7 @@ export const InnerContainerStyle = StyleSheet.create({
 export const HeadingStyle = StyleSheet.create({
   paddingTop: 10,
   paddingBottom: 5,
-  marginTop: 15,
+  marginTop: 5,
   fontWeight: 500,
   fontSize: 24,
   color: "cyan",
@@ -76,7 +76,6 @@ export const GrandParentFlex = StyleSheet.create({
   backgroundColor: "black",
   flex: 1,
   width: 390,
-  height: 400,
   padding: 10,
   margin: 10,
   marginBottom: 10,
@@ -86,17 +85,41 @@ export const GrandParentFlex = StyleSheet.create({
 export const GrandParentText = StyleSheet.create({
   fontSize: 13,
   fontWeight: "bold",
-  textAlign: "center",
+  textAlign: "left",
   marginBottom: 10,
   color: "white",
 });
 
 export const ParentFlex = StyleSheet.create({
-  backgroundColor: "#222222",
+  backgroundColor: "#6082B6",
   /* flex: 1 will make this fit the entire space allowed by
                parent, FlexBoxView01 */
   flex: 1,
-  padding: 10,
+});
+
+export const InnerText = StyleSheet.create({
+  fontSize: 13,
+  textAlign: "left",
+  padding: 4,
+  color: "white",
+});
+
+export const SmallChild01 = StyleSheet.create({
+  backgroundColor: "#333333",
+  width: 75,
+  height: 75,
+});
+
+export const SmallChild02 = StyleSheet.create({
+  backgroundColor: "#444444",
+  width: 75,
+  height: 75,
+});
+
+export const SmallChild03 = StyleSheet.create({
+  backgroundColor: "#555555",
+  width: 75,
+  height: 75,
 });
 
 /*

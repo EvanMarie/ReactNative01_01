@@ -3,15 +3,9 @@ import { StyleSheet, Text, View } from "react-native";
 import {
   GrandParentFlex,
   GrandParentText,
+  InnerText,
   ParentFlex,
 } from "./styles_divs/styles";
-
-const InnerText = StyleSheet.create({
-  fontSize: 13,
-  fontWeight: "bold",
-  padding: 4,
-  color: "white",
-});
 
 const Child01 = StyleSheet.create({
   backgroundColor: "#333333",
@@ -48,7 +42,7 @@ const FlexBox = () => {
         */}
       <View style={GrandParentFlex}>
         <Text style={GrandParentText}>
-          FlexBox 01 - GrandParent (flex: 1, padding: 10)
+          Flex 01 - GrandParent (flex: 1, padding: 10)
         </Text>
         <View style={ParentFlex}>
           <Text style={InnerText}>Parent - flex: 1, padding: 10</Text>

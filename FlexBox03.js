@@ -4,30 +4,11 @@ import {
   GrandParentFlex,
   GrandParentText,
   ParentFlex,
+  InnerText,
+  SmallChild01,
+  SmallChild02,
+  SmallChild03,
 } from "./styles_divs/styles";
-
-const InnerText = StyleSheet.create({
-  fontSize: 13,
-  fontWeight: "bold",
-  textAlign: "center",
-  padding: 4,
-  color: "white",
-});
-
-const Child01 = StyleSheet.create({
-  backgroundColor: "#333333",
-  flex: 2,
-});
-
-const Child02 = StyleSheet.create({
-  backgroundColor: "#444444",
-  flex: 1,
-});
-
-const Child03 = StyleSheet.create({
-  backgroundColor: "#555555",
-  flex: 1,
-});
 
 const FlexBox03 = () => {
   return (
@@ -38,19 +19,24 @@ const FlexBox03 = () => {
     >
       <View style={GrandParentFlex}>
         <Text style={GrandParentText}>
-          FlexBox 03 - GrandParent (flex: 1, padding: 10)
+          Flex 03 - GrandParent (flex: 1, padding: 10)
         </Text>
         <View style={ParentFlex}>
-          <Text style={InnerText}>Parent - </Text>
-          <View style={Child01}>
-            <Text style={InnerText}>Child01 -</Text>
+          <Text style={InnerText}>Parent - flex: 1, padding: 10</Text>
+          <View style={SmallChild01}>
+            <Text style={InnerText}>Child01 - width: 75, height: 75,</Text>
           </View>
-          <View style={Child02}>
-            <Text style={InnerText}>Child02 -</Text>
+          <View style={SmallChild02}>
+            <Text style={InnerText}>Child02 - width: 75, height: 75,</Text>
           </View>
-          <View style={Child03}>
-            <Text style={InnerText}>Child03 -</Text>
+          <View style={SmallChild03}>
+            <Text style={InnerText}>Child03 - width: 75, height: 75,</Text>
           </View>
+          <Text style={InnerText}>
+            On Mobile, children are stacked horizontally by default, due to the
+            typical use of portrait orientation. flexDirection: column -
+            default.{" "}
+          </Text>
         </View>
       </View>
     </View>
